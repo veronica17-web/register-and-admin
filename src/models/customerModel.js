@@ -41,12 +41,7 @@ const customerSchema = new mongoose.Schema({
         require: true,
         trim: true
     },
-    productId: {
-        type: ObjectId,
-        ref: "productDetails",
-        required: true,
-        trim: true
-    },
+   
     isDeleted: { 
         type: Boolean, 
         default: false 
