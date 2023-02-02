@@ -18,6 +18,12 @@ const EnquirySchema = new mongoose.Schema({
          enum: ["pending", "completed"]
 
     }, 
+    productId: {
+        type: ObjectId,
+        ref: "productDetails",
+        required: true,
+        trim: true
+    },
 
     isDeleted: { 
         type: Boolean, 

@@ -129,7 +129,7 @@ const login = async (req, res) => {
 const Enquiry = async (req,res)=>{
     try {
     let data = req.body
-    const {customerID,Enquiry} = data
+    const {customerID,Enquiry,productId} = data
 
     if (isValidBody(data)) {
         return res.status(400).send({ status: false, message: "Provide some data inside the body " })
@@ -141,6 +141,14 @@ const Enquiry = async (req,res)=>{
     if (!isValidObjectId(customerID)) {
         return res.status(400).send({ status: false, message: " customerID not valid" })
     }
+    //productID validation
+    if (!isValid1(productId)) {
+        return res.status(400).send({ status: false, message: "customerID is required" })
+    }
+    if (!isValidObjectId(productId)) {
+        return res.status(400).send({ status: false, message: " customerID not valid" })
+    }
+
     //enquiry validation
     if (isValid(Enquiry)) {
         return res.status(400).send({ status: false, message: "Enquiry is required" })
