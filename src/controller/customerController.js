@@ -143,10 +143,10 @@ const Enquiry = async (req,res)=>{
     }
     //productID validation
     if (!isValid1(productId)) {
-        return res.status(400).send({ status: false, message: "customerID is required" })
+        return res.status(400).send({ status: false, message: "productId is required" })
     }
     if (!isValidObjectId(productId)) {
-        return res.status(400).send({ status: false, message: " customerID not valid" })
+        return res.status(400).send({ status: false, message: " productId not valid" })
     }
 
     //enquiry validation
