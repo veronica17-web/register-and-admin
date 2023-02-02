@@ -6,18 +6,18 @@ const createProduct = async (req, res) => {
         let productDetails = req.body
         const { isValid, isValidBody,  isValidPrice } = require('../validation/validators')
 
-        const { name, price, description } = productDetails
+        const { Name, price, description } = productDetails
 
         if (isValidBody(productDetails))
             return res.status(400).send({
                 status: false, message: "Enter details to create Product"
             });
 
-        if (!name) return res.status(400).send({
-            status: false, message: "First name is required"
+        if (!Name) return res.status(400).send({
+            status: false, message: " name is required"
         });
 
-        if (isValid(name)) {
+        if (isValid(Name)) {
             return res.status(400).send({
                 status: false, message: "name should not be an empty string"
             });
